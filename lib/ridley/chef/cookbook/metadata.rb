@@ -469,7 +469,7 @@ module Ridley::Chef
       end
 
       def from_json(json)
-        from_hash JSON.parse(json)
+        from_hash JSON.parse(json, :create_additions => false, :create_id => nil)
       end
 
       private

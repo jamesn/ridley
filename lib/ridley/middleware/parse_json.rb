@@ -27,7 +27,7 @@ module Ridley
         #
         # @return [Hash]
         def parse(body)
-          result = JSON.parse(body)
+          result = JSON.parse(body, :create_additions => false, :create_id => nil)
           result.is_a?(Hash) ? Hashie::Mash.new(result) : result
         end
 

@@ -51,7 +51,7 @@ module Ridley
     #
     # @return [representation.class]
     def from_json(json)
-      new(JSON.parse(json))
+      new(JSON.parse(json, :create_additions => false, :create_id => nil))
     end
 
     # @return [Ridley::Connection]

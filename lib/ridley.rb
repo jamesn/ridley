@@ -8,8 +8,6 @@ require 'json'
 require 'pathname'
 require 'solve'
 
-JSON.create_id = nil
-
 module Ridley
   CHEF_VERSION = '11.4.0'.freeze
 
