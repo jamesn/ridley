@@ -21,7 +21,7 @@ module Ridley
         it 'includes the backtrace from the original error' do
           expect { instance.from_file('/path') }.to raise_error { |error|
             expect(error.message).to include("undefined local variable or method `code' for")
-            expect(error.backtrace).to include("/path:1:in `block in from_file'")
+            expect(error.backtrace.to_s).to match(/\/path:1:in \`(?:block in from_file|\(eval\))\'/)
           }
         end
       end

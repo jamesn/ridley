@@ -37,17 +37,17 @@ class Default < Thor
 
     desc "all", "run all tests"
     def all
-      exec "rspec --color --format=documentation spec"
+      exec "#{RbConfig.ruby} -S rspec --color --format=documentation spec"
     end
 
     desc "unit", "run only unit tests"
     def unit
-      exec "rspec --color --format=documentation spec --tag ~type:acceptance"
+      exec "#{RbConfig.ruby} -S rspec --color --format=documentation spec --tag ~type:acceptance"
     end
 
     desc "acceptance", "run only acceptance tests"
     def acceptance
-      exec "rspec --color --format=documentation spec --tag type:acceptance"
+      exec "#{RbConfig.ruby} -S rspec --color --format=documentation spec --tag type:acceptance"
     end
   end
 end
